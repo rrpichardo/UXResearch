@@ -1,8 +1,8 @@
-# TRI-CA: Trials With Conversational Agents
+# UXResearch
 
 ## Purpose & Functionality
 
-TRI-CA is a comprehensive web-based experimental research system designed for conducting controlled studies on human-AI interactions. 
+UXResearch is a comprehensive web-based experimental research system designed for conducting controlled studies on human-AI interactions. 
 It enables researchers to conduct rigorous experimental studies examining how humans interact with AI systems under controlled conditions.
 It supports multi-stage experimental designs with randomized treatment groups, ensuring robust data collection for academic research.
 Built with Node.js and Express, it provides a complete experimental workflow from participant onboarding, going through a random treatment group's specific configuration, and ends with data collection.
@@ -74,8 +74,8 @@ This section covers the two simplest local paths. Start with the minimal smoke t
 #### 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/ProfNaama/TRI-CA.git
-cd TRI-CA
+git clone https://github.com/rrpichardo/UXResearch.git
+cd UXResearch
 ```
 
 #### 2. **Install dependencies**
@@ -85,11 +85,11 @@ npm install
 ```
 
 #### 3. **Run a minimal smoke test (no database, no local code file)**
-Use the provided test reusable code `REUSABLE_CODE=tri-ca` to skip DB validation and write results to a local file. For a full flow test without calling OpenAI, omit `OPENAI_API_KEY`; the app will use its built-in fake response, or you can override it with `FAKE_LLM_RESPONSE`.
+Use the provided test reusable code `REUSABLE_CODE=UXResearch` to skip DB validation and write results to a local file. For a full flow test without calling OpenAI, omit `OPENAI_API_KEY`; the app will use its built-in fake response, or you can override it with `FAKE_LLM_RESPONSE`.
 
 ```bash
-REUSABLE_CODE=tri-ca \
-FAKE_LLM_RESPONSE="This is a fake TRI-CA response for local testing." \
+REUSABLE_CODE=UXResearch \
+FAKE_LLM_RESPONSE="This is a fake UXResearch response for local testing." \
 RESULTS_FILE=/tmp/results.txt \
 node app.js
 ```
@@ -98,15 +98,15 @@ node app.js
 Generate a local JSON code file:
 
 ```bash
-python pre_requisites/generate_codes.py --expid local_demo --format local-json > /tmp/tri_ca_local_codes.json
+python pre_requisites/generate_codes.py --expid local_demo --format local-json > /tmp/uxresearch_local_codes.json
 ```
 
-Then start TRI-CA with that local code file:
+Then start UXResearch with that local code file:
 
 ```bash
 EXPERIMENT_ID=local_demo \
-LOCAL_CODES_FILE=/tmp/tri_ca_local_codes.json \
-FAKE_LLM_RESPONSE="This is a fake TRI-CA response for local testing." \
+LOCAL_CODES_FILE=/tmp/uxresearch_local_codes.json \
+FAKE_LLM_RESPONSE="This is a fake UXResearch response for local testing." \
 RESULTS_FILE=/tmp/results.txt \
 node app.js
 ```
@@ -115,8 +115,8 @@ node app.js
 - Open the browser and visit http://localhost:3030 (or the port printed by the server).
 
 #### 6. **Test flow**
-- For the minimal smoke test, enter the reusable code `tri-ca`.
-- For the local-with-codes path, open `/tmp/tri_ca_local_codes.json` and enter one of the generated codes.
+- For the minimal smoke test, enter the reusable code `UXResearch`.
+- For the local-with-codes path, open `/tmp/uxresearch_local_codes.json` and enter one of the generated codes.
 - Walk through consent, baseline questionnaire, the AI chat task, and post-study questionnaire.
 - Results will be appended to the file set by `RESULTS_FILE` (default: none) or stored in PostgreSQL if configured.
 - For many small ad hoc studies on one machine, these local paths may already be enough.
@@ -130,8 +130,8 @@ If you only need a local smoke test or a small ad hoc study on one machine, use 
 #### 1. **Start from a local checkout**
 
 ```bash
-git clone https://github.com/ProfNaama/TRI-CA.git
-cd TRI-CA
+git clone https://github.com/rrpichardo/UXResearch.git
+cd UXResearch
 npm install
 ```
 
@@ -152,7 +152,7 @@ For live or public studies, use PostgreSQL for participant-code validation and c
 - Keep the local-file-backed `LOCAL_CODES_FILE` mode for local or ad hoc single-machine runs; it is already covered in `Getting Started` above.
 
 #### 4. **Generate and Load Participant Codes**
-For live deployment, generate codes for a specific experiment ID and load them into `tri_ca_codes`.
+For live deployment, generate codes for a specific experiment ID and load them into `uxresearch_codes`.
 
 Basic generator usage:
 ```bash
@@ -189,7 +189,7 @@ python pre_requisites/generate_codes.py --expid your_experiment_id --format loca
 
 By default (`--format all`), the script prints three sections:
 - `csv`: a simple code list that is easy to inspect or paste into a spreadsheet.
-- `postgresql`: an `INSERT` statement block for the `tri_ca_codes` table.
+- `postgresql`: an `INSERT` statement block for the `uxresearch_codes` table.
 - `local json`: JSON records ready to save into `LOCAL_CODES_FILE`.
 
 For local-file-backed studies, create a JSON file and point `LOCAL_CODES_FILE` to it. Example:
@@ -202,8 +202,8 @@ For local-file-backed studies, create a JSON file and point `LOCAL_CODES_FILE` t
 ]
 ```
 
-When a participant completes the study, TRI-CA updates that record's `completed` field in the same file so the code cannot be reused after a server restart.
-If you store codes for several experiments in one combined JSON file, set `EXPERIMENT_ID` so TRI-CA uses the matching `expid` records.
+When a participant completes the study, UXResearch updates that record's `completed` field in the same file so the code cannot be reused after a server restart.
+If you store codes for several experiments in one combined JSON file, set `EXPERIMENT_ID` so UXResearch uses the matching `expid` records.
 
 
 #### 5. **Configure Environment Variables**
@@ -227,7 +227,7 @@ SESSION_SECRET=replace_with_a_long_random_secret
 - `RESULTS_FILE`: Path to append results as lines of JSON (useful for quick capture).
 - `LOCAL_CODES_FILE`: Path to a JSON file that stores participant codes and their completion status for local, non-PostgreSQL studies.
 - `BASE64_ENCODE`: If set to `1`, saved session payloads will be Base64-encoded. Default: off (`0`).
-- `REUSABLE_CODE`: Developer testing code that bypasses DB code-check (for example, `REUSABLE_CODE=tri-ca` during local testing).
+- `REUSABLE_CODE`: Developer testing code that bypasses DB code-check (for example, `REUSABLE_CODE=UXResearch` during local testing).
 - `EXPERIMENT_ID`: Identifier for the experiment.
 - `COMPLETE_CODE`: A researcher-defined static completion code given to all participants when they finish the study. Takes priority over `GENERATE_UNIQUE_COMPLETION_CODE`.
 - `GENERATE_UNIQUE_COMPLETION_CODE`: If set to `1` and `COMPLETE_CODE` is not set, the server generates a unique 8-character code per participant at completion. The code is shown to the participant and saved to the database.
@@ -236,13 +236,13 @@ SESSION_SECRET=replace_with_a_long_random_secret
 - `OPENAI_MODEL`: OpenAI model to use (default `gpt-4o`).
 - `FAKE_LLM_RESPONSE`: Fixed assistant reply used when `OPENAI_API_KEY` is not set. If no API key is provided, this variable is required.
 - `DATABASE_URL`: PostgreSQL connection string for database-backed code validation and result storage.
-- `RESULTS_PGTABLE`: PostgreSQL table name for results storage (default `tri_ca_results`).
-- `CODES_PGTABLE`: PostgreSQL table name for participant codes (default `tri_ca_codes`).
+- `RESULTS_PGTABLE`: PostgreSQL table name for results storage (default `uxresearch_results`).
+- `CODES_PGTABLE`: PostgreSQL table name for participant codes (default `uxresearch_codes`).
 - `SESSION_SECRET`: Secret used to sign session cookies. If omitted, the server generates a secure random secret at startup.
 
 
 #### 6. **Choose a Hosting Target**
-Deploy TRI-CA anywhere that can run a Node.js web server and expose environment variables, including:
+Deploy UXResearch anywhere that can run a Node.js web server and expose environment variables, including:
 
 - a local lab server
 - Heroku or another PaaS
@@ -287,7 +287,7 @@ node app.js
 ### **Participant flow (what a participant experiences)**
 
 1. Visit site and enter an access code (a short numeric/string code generated by the researcher).
-2. The platform validates the code (unless a configured reusable local test code such as `tri-ca` is being used).
+2. The platform validates the code (unless a configured reusable local test code such as `UXResearch` is being used).
 3. The session initializes and assigns a deterministic treatment group based on the participant ID.
 4. Participant reads and signs consent (or declines and exits).
 5. Participant completes baseline questionnaire.
@@ -345,12 +345,12 @@ Notes:
 - `user_pre_questions` and `user_post_questions` in the treatment CSV should match `block_name` values in `questions_bank.csv` (semicolon-separated).
 - `hidden_prompt` should reference a plain text file in `experiment_configuration/hidden_prompts_bank/` and will be used as the LLM system message.
 - `user_task_description` should point to an HTML file under `experiment_configuration/user_tasks_bank/` to render task instructions.
-- **CSV quoting**: these are standard comma-separated files parsed by the [`csv-parser`](https://www.npmjs.com/package/csv-parser) npm package. In the current TRI-CA loader, quoted fields correctly support commas, embedded newlines, and doubled double quotes (`""`). This matters especially in `experiment_desc.csv`, where HTML snippets often span multiple lines. If a field value contains a comma or newline, wrap it in double quotes. To include a literal double quote inside a quoted field, double it.
+- **CSV quoting**: these are standard comma-separated files parsed by the [`csv-parser`](https://www.npmjs.com/package/csv-parser) npm package. In the current UXResearch loader, quoted fields correctly support commas, embedded newlines, and doubled double quotes (`""`). This matters especially in `experiment_desc.csv`, where HTML snippets often span multiple lines. If a field value contains a comma or newline, wrap it in double quotes. To include a literal double quote inside a quoted field, double it.
 
 Example `experiment_desc.csv` value:
 
 ```csv
-consent,TRI-CA,Example Consent Information,"<p>Line 1, with a comma.</p>
+consent,UXResearch,Example Consent Information,"<p>Line 1, with a comma.</p>
 <p>She said ""hello"" here.</p>"
 ```
 
@@ -407,7 +407,7 @@ If `RESULTS_FILE` is set, the server appends one JSON object per completed sessi
 ```
 
 - `time`: server-side save time
-- `uid`: TRI-CA session UID
+- `uid`: UXResearch session UID
 - `userid`: either the Prolific identifier object or the internal UID
 - `data`: the saved session payload
 
@@ -415,7 +415,7 @@ If `BASE64_ENCODE=1`, the `data` field is Base64-encoded. Otherwise it is saved 
 
 ### **Decoded session payload**
 
-The decoded session payload contains the full experiment session that TRI-CA serializes from the active session state. Common fields include:
+The decoded session payload contains the full experiment session that UXResearch serializes from the active session state. Common fields include:
 
 - `uid`: internal session identifier
 - `sessionStartTime`: ISO timestamp for session start
@@ -625,7 +625,7 @@ All form submissions POST to a single endpoint. The `form_type` hidden field (in
 
 | `form_type` | Handler | What it does |
 |---|---|---|
-| `welcome_code` | `handleWelcomeCodeSubmission` | Validates the submitted code against the configured local JSON code file or DB (`SELECT completed WHERE code=? AND expid=?`), or accepts the configured reusable test code (for example, `tri-ca`). On success, stores code in session. Reconciles `prolific_pid` if it differs between URL param and form field. |
+| `welcome_code` | `handleWelcomeCodeSubmission` | Validates the submitted code against the configured local JSON code file or DB (`SELECT completed WHERE code=? AND expid=?`), or accepts the configured reusable test code (for example, `UXResearch`). On success, stores code in session. Reconciles `prolific_pid` if it differs between URL param and form field. |
 | `consent` | `handleConsentSubmission` | Checks all `consent.*` fields for `"YES"`. Any non-YES → sets `finished=true` with opt-out messaging. Otherwise sets `consent=true`. |
 | `pre_questionnaire` | `handlePreQuestionnaireSubmission` | Stores the entire `req.body` (all question responses) into `sessionManager.setPreQuestionsAnswers()`. |
 | `chat_ended` | `handleChatEndedSubmission` | Sets `sessionManager.setChatEnded(true)`. Triggered when the participant clicks "End Chat" in the UI. |
@@ -699,8 +699,8 @@ If you use this platform in academic work, please cite the associated publicatio
 ### Preferred citation
 
 ```bibtex
-@misc{tri_ca_platform,
-  title        = {TRI-CA: Trials in Conversational Agents},
+@misc{uxresearch_platform,
+  title        = {UXResearch},
   author       = {Contributors},
   year         = {2026},
   howpublished = {GitHub repository},
@@ -714,7 +714,7 @@ If/when a formal paper (or preprint/DOI) is available, replace the BibTeX entry 
 
 ### **Session storage and deployment**
 
-- The default deployment uses the built-in in-memory Express session store, so TRI-CA should be treated as a single-server application unless you intentionally redesign session storage.
+- The default deployment uses the built-in in-memory Express session store, so UXResearch should be treated as a single-server application unless you intentionally redesign session storage.
 - If `SESSION_SECRET` is auto-generated at startup, active sessions become invalid after server restart.
 - If multiple servers need to share the same sessions, they must all use the same `SESSION_SECRET` and a shared session store. That is not implemented by default.
 
@@ -744,5 +744,5 @@ If/when a formal paper (or preprint/DOI) is available, replace the BibTeX entry 
 
 ### **Automatic stage skipping**
 
-- If a treatment group leaves `hidden_prompt` blank, TRI-CA skips the chat stage automatically.
-- If a treatment group has no configured pre-questionnaire or post-questionnaire blocks, TRI-CA skips that questionnaire stage automatically.
+- If a treatment group leaves `hidden_prompt` blank, UXResearch skips the chat stage automatically.
+- If a treatment group has no configured pre-questionnaire or post-questionnaire blocks, UXResearch skips that questionnaire stage automatically.

@@ -15,7 +15,7 @@ def generate_csv_format(codes):
 
 # prapare for PostgreSQL
 def generate_postgresql_format(codes, expid):
-    print ("INSERT INTO tri_ca_codes (code, expid) VALUES")
+    print ("INSERT INTO uxresearch_codes (code, expid) VALUES")
     print(",\n".join([f'(\'{c}\',\'{expid}\')' for c in codes]))
     print (";")
 
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     # how to read arguments: https://www.tutorialspoint.com/python/python_command_line_arguments.htm
     
     # Create an ArgumentParser object
-    parser = argparse.ArgumentParser(description='This program generates codes for TRI-CA.')
+    parser = argparse.ArgumentParser(description='This program generates codes for UXResearch.')
 
     # Add arguments
     parser.add_argument('--codes-count', type=int, help='number of codes to generate', default=100)

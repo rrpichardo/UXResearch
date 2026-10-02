@@ -1,7 +1,7 @@
 page,title,header,body1
-chat,TRI-CA,Chat with an AI agent,
-consent,TRI-CA,Example Consent Information,"<p>
-  This page shows where your study's consent language appears in the baseline TRI-CA
+chat,UXResearch,Chat with an AI agent,
+consent,UXResearch,Example Consent Information,"<p>
+  This page shows where your study's consent language appears in the baseline UXResearch
   template. For a real deployment, replace this example text in
   <code>experiment_desc.csv</code> with your approved consent summary and any
   study-specific details.
@@ -12,9 +12,9 @@ consent,TRI-CA,Example Consent Information,"<p>
   code.
 </p>
 "
-pre_questionnaire,TRI-CA,Please read the following instructions,
-post_questionnaire,TRI-CA,Thank you for participating,
-session_ended,TRI-CA,Thank You for participating in the study.<br/>,
-error,TRI-CA,We are sorry - an error has occurred. Please close your browser and try again,
-welcome_code,TRI-CA,Welcome to TRI-CA,Please enter your access code
-user_preferences,TRI-CA,Welcome to the ChatLab experiment website,On the next page you will be asked to engage with an AI agent. Please personalize your preferences:
+pre_questionnaire,UXResearch,Please read the following instructions,
+post_questionnaire,UXResearch,Thank you for participating,
+session_ended,UXResearch,Thank You for participating in the study.<br/>,
+error,UXResearch,We are sorry - an error has occurred. Please close your browser and try again,
+welcome_code,UXResearch,Welcome to UXResearch,Please enter your access code
+user_preferences,UXResearch,Welcome to the ChatLab experiment website,On the next page you will be asked to engage with an AI agent. Please personalize your preferences:

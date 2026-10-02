@@ -1,5 +1,5 @@
-{
-  "name": "tri-ca-node-server",
+﻿{
+  "name": "uxresearch-node-server",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"

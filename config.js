@@ -14,12 +14,12 @@ config.apiTokenLimit = parseInt(process.env["OPENAI_TOKEN_LIMIT"] || "1000");
 config.apiModel = process.env['OPENAI_MODEL'] || "gpt-4o";
 
 // a fake response for testing
-config.fakeLlmResponse = process.env['FAKE_LLM_RESPONSE'] || "This is a fake TRI-CA response for local testing.";
+config.fakeLlmResponse = process.env['FAKE_LLM_RESPONSE'] || "This is a fake UXResearch response for local testing.";
 
 // postgres
 config.connectionString = process.env['DATABASE_URL'];
-config.resultsTable = process.env['RESULTS_PGTABLE'] || "tri_ca_results";
-config.codesTable = process.env['CODES_PGTABLE'] || "tri_ca_codes";
+config.resultsTable = process.env['RESULTS_PGTABLE'] || "uxresearch_results";
+config.codesTable = process.env['CODES_PGTABLE'] || "uxresearch_codes";
 config.localCodesFile = process.env['LOCAL_CODES_FILE'];
 
 
