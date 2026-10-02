@@ -1,15 +1,24 @@
 page,title,header,body1
 chat,UXResearch,Chat with an AI agent,
-consent,UXResearch,Example Consent Information,"<p>
-  This page shows where your study's consent language appears in the baseline UXResearch
-  template. For a real deployment, replace this example text in
-  <code>experiment_desc.csv</code> with your approved consent summary and any
-  study-specific details.
+consent,UXResearch,Consent Information,"<p>
+  You are invited to take part in a research study about how people use an AI chatbot to
+  discover movies and TV shows. The study has three parts: a short questionnaire, a chat with
+  an AI recommendation chatbot, and another short questionnaire at the end. There are no correct
+  or incorrect responses. This study evaluates the chatbot, not the participants.
 </p>
 <p>
-  The consent questions and submit button below come from the page template. If you
-  want to change their wording or layout, edit the consent page in the application
-  code.
+  <strong>What we collect.</strong> We record your questionnaire answers, the full text of your
+  conversation with the chatbot, and timing information (for example, how long each part takes).
+  We do not ask for your name or contact information. Please do not include personal identifying
+  information in your chat messages or questionnaire answers.
+</p>
+<p>
+  <strong>How your data is used.</strong> Your responses are used for research purposes only and
+  are analyzed together with the responses of other participants.
+</p>
+<p>
+  <strong>Voluntary participation.</strong> Taking part is voluntary. You may stop at any time by
+  closing your browser window; responses from sessions that are not completed are not saved.
 </p>
 "
 pre_questionnaire,UXResearch,Please read the following instructions,

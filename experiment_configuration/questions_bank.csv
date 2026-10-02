@@ -1,13 +1,74 @@
 block_name,allow_block_permutation,allow_question_permutation,question_name,question_text,is_text,is_likert,is_grouped_likert,is_multi_choice,is_label,options
-Demo_block_1,0,0,Demo_q1,<strong>Example block 1.</strong> These are single-item Likert questions that can measure baseline attitudes or post-task outcomes.,0,0,0,0,1,
-Demo_block_1,0,0,Demo_q2,<strong>Example single-item question.</strong> Replace this text with one attitude or outcome item that matters in your study.,0,1,0,0,0,Not at all|Very much
-Demo_block_1,0,0,Demo_q3,"This item shows that quoted text such as ""important instruction"" can appear in question wording.",0,1,0,0,0,Strongly disagree|Strongly agree
-Demo_block_2,1,1,Demo_q4,<strong>Example block 2.</strong> These are grouped Likert questions that share one response scale across several related statements.,0,0,0,0,1,
-Demo_block_2,1,1,Demo_q5,This grouped item shows how one statement can appear inside a shared battery of related measures.,0,0,1,0,0,Strongly disagree|Strongly agree
-Demo_block_2,1,1,Demo_q6,Researchers often use grouped Likert items for trust usability workload or other multi-item constructs.,0,0,1,0,0,Strongly disagree|Strongly agree
-Demo_block_3,1,1,Demo_q7,<strong>Example block 3.</strong> These are open-ended text questions for comments explanations or qualitative reflections.,0,0,0,0,1,
-Demo_block_3,1,1,Demo_q8,Briefly describe how you might adapt this baseline template for your own study.,1,0,0,0,0,
-Demo_block_3,1,1,Demo_q9,Which study materials would you replace first: page text questions task instructions or hidden prompts?,1,0,0,0,0,
-Demo_block_4,1,1,Demo_q11,<strong>Example block 4.</strong> These are single-select multiple-choice questions with one answer chosen from a fixed set of options.,0,0,0,0,1,
-Demo_block_4,1,1,Demo_q12,Which UXResearch configuration area would you most likely edit first?,0,0,0,1,0,questions_bank.csv|experiment_desc.csv|treatment_groups_config.csv|hidden_prompts_bank/
-Demo_block_4,1,1,Demo_q13,Which response format would be most useful in your study?,0,0,0,1,0,Single Likert item|Grouped Likert block|Open-ended text|A mix of several formats
+Pre_familiarity,0,1,q_pre_familiarity_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Pre_familiarity,0,1,q_pre_familiarity_1,I am very familiar with movies.,0,0,1,0,0,Strongly disagree|Strongly agree
+Pre_familiarity,0,1,q_pre_familiarity_2,I am very familiar with TV shows.,0,0,1,0,0,Strongly disagree|Strongly agree
+Pre_familiarity,0,1,q_pre_familiarity_3,I consider myself knowledgeable about different movie and TV genres.,0,0,1,0,0,Strongly disagree|Strongly agree
+Pre_familiarity,0,1,q_pre_familiarity_4,I often talk about movies and TV shows with other people.,0,0,1,0,0,Strongly disagree|Strongly agree
+Pre_habits,0,0,q_pre_watch_freq,"On average, how much time do you spend watching movies or TV shows each week?",0,0,0,1,0,Less than 2 hours|2-5 hours|6-10 hours|11-15 hours|16-20 hours|More than 20 hours
+Pre_habits,0,0,q_pre_streaming_use,"How often do you use streaming services (such as Netflix, Hulu, Disney+, Max, etc.)?",0,0,0,1,0,Daily|A few times a week|About once a week|A few times a month|Rarely|Never
+Pre_habits,0,0,q_pre_choose_time,"When you sit down to watch something, how long does it usually take you to choose?",0,0,0,1,0,Less than 5 minutes|5-10 minutes|11-20 minutes|21-30 minutes|More than 30 minutes
+Pre_habits,0,0,q_pre_overload,I often have difficulty choosing what to watch because there are too many options.,0,1,0,0,0,Strongly disagree|Strongly agree
+Pre_criteria,0,1,q_pre_criteria_0,"When choosing a movie or TV show, how important is each of the following to you? (1 representing not at all important and 7 representing extremely important)",0,0,0,0,1,
+Pre_criteria,0,1,q_pre_criteria_1,Genre,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_2,Plot or story description,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_3,Actors or cast,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_4,Director or creator,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_5,Ratings or reviews,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_6,Length (runtime or number of seasons),0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_7,Recommendations from friends or family,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_8,My current mood,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_9,Whether it is new or trending,0,0,1,0,0,Not at all important|Extremely important
+Pre_criteria,0,1,q_pre_criteria_10,Similarity to titles I have enjoyed before,0,0,1,0,0,Not at all important|Extremely important
+Pre_favorite,0,0,q_pre_favorite,"What are one or two of your favorite movies or TV shows, and what do you like about them?",1,0,0,0,0,
+Post_choice,0,0,q_choice_title,Which title did you choose from the chatbot's recommendations?,1,0,0,0,0,
+Post_choice,0,0,q_choice_reason,Why did you choose this title over the other recommendations?,1,0,0,0,0,
+Post_quality,0,1,q_dv_quality_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_quality,0,1,q_dv_quality_1,The recommendations matched my preferences.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_quality,0,1,q_dv_quality_2,The recommendations were relevant to what I asked for.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_quality,0,1,q_dv_quality_3,The recommendations were diverse enough to give me real choices.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_quality,0,1,q_dv_quality_4,The recommendations were novel or interesting to me.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_quality,0,1,q_dv_quality_5,The recommended titles were described with enough information for me to decide.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_satisfaction,0,1,q_dv_satisfaction_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_satisfaction,0,1,q_dv_satisfaction_1,I am satisfied with the title I chose.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_satisfaction,0,1,q_dv_satisfaction_2,I am confident that I would enjoy the title I chose.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_satisfaction,0,1,q_dv_satisfaction_3,I am satisfied with the recommendation process.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_satisfaction,0,1,q_dv_satisfaction_4,I would be happy to watch the title I chose.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_intention,0,1,q_dv_intention_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_intention,0,1,q_dv_intention_1,I intend to watch the title I chose.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_intention,0,1,q_dv_intention_2,I am likely to watch the title I chose in the near future.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_intention,0,1,q_dv_intention_3,I would use this chatbot again to find something to watch.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_intention,0,1,q_dv_intention_4,I would recommend this chatbot to a friend.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_difficulty,0,1,q_dv_difficulty_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_difficulty,0,1,q_dv_difficulty_1,It was easy to decide which title to choose.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_difficulty,0,1,q_dv_difficulty_2,Choosing a title took a lot of mental effort.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_difficulty,0,1,q_dv_difficulty_3,I felt overwhelmed by the recommendations.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_usability,0,1,q_dv_usability_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_usability,0,1,q_dv_usability_1,The chatbot was easy to use.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_usability,0,1,q_dv_usability_2,The chatbot helped me find something to watch faster than browsing on my own.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_usability,0,1,q_dv_usability_3,The chatbot was useful for discovering movies and TV shows.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_usability,0,1,q_dv_usability_4,The chatbot understood what I was looking for.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_open,0,0,q_dv_open,What did you like or dislike about the chatbot's recommendations? Please elaborate.,1,0,0,0,0,
+Post_human_likeness,0,0,q_human_likeness_0,"Using each of the following scales, how would you evaluate the agent in this task?",0,0,0,0,1,
+Post_human_likeness,0,0,q_human_likeness_1,,0,1,0,0,0,Very mechanical|Very humanlike
+Post_human_likeness,0,0,q_human_likeness_2,,0,1,0,0,0,Has many more techno qualities|Has many more human qualities
+Post_human_likeness,0,0,q_human_likeness_3,,0,1,0,0,0,Very machine-like|Very person-like
+Post_trust,0,1,q_trust_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_trust,0,1,q_trust_1,The agent is capable of interpreting situations correctly.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_2,The agent is reliable.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_3,I trust the agent.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_4,I can rely on the agent.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_5,The agent was intelligent.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_6,The agent made sense to me.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_7,The agent was reasonable.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_trust,0,1,q_trust_8,The agent had good intentions.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_manip_check,0,1,q_manip_0,"On a scale of 1 to 7 (1 representing strongly disagree and 7 representing strongly agree), please rate your level of agreement with the following statements:",0,0,0,0,1,
+Post_manip_check,0,1,q_manip_1,The chatbot asked me questions to understand my preferences.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_manip_check,0,1,q_manip_2,The chatbot explained why it recommended each title.,0,0,1,0,0,Strongly disagree|Strongly agree
+Post_demographics,0,0,q_demo_0,Please answer the following demographic questions,0,0,0,0,1,
+Post_demographics,0,0,q_gender,What is your gender?,0,0,0,1,0,Female|Male|Other
+Post_demographics,0,0,q_age,What is your age?,0,0,0,1,0,18-20|21-30|31-40|41-50|51-60|61-70|over 70
+Post_demographics,0,0,q_education,What best describes the level of your education?,0,0,0,1,0,"Some high school, no diploma|High school diploma or GED|Some college, no degree|Associate (2-year) degree|Bachelor's (4-year) degree|Master's degree|Doctorate degree"
+Post_demographics,0,0,q_experience,"How much experience you have with AI agents (such as Chat GPT, chatbot, etc.)?",0,0,0,1,0,I use them daily|I use them weekly|I use them monthly|I have some experience with AI agents but I almost never use them|I have never used an AI agent
+Post_demographics,0,0,q_ai_recs,Have you ever used an AI chatbot to get movie or TV show recommendations before?,0,0,0,1,0,"Yes, often|Yes, a few times|Yes, once|No, never"
+Post_demographics,0,0,q_device_usage,"What is your daily average usage of digital devices (such as a PC, mobile phone, laptop, tablet, etc.)?",0,0,0,1,0,Less than an hour|1-2 hours|3-4 hours|5-6 hours|7-8 hours|9-10 hours|11 hours and more
+Post_comments,0,0,q_comments,Do you wish to add anything?,1,0,0,0,0,
