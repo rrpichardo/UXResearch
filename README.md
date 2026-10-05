@@ -71,6 +71,8 @@ Built with Node.js and Express, it provides a complete experimental workflow fro
 ### Quick Start (5-10 minutes, local)
 This section covers the two simplest local paths. Start with the minimal smoke test below. If you want a slightly more realistic single-machine pilot, the second path uses `LOCAL_CODES_FILE` with participant-specific codes while still staying fully local.
 
+**Before you start:** install [Node.js](https://nodejs.org) 18 or newer (check with `node -v`). Python is only needed for the optional participant-code step below. The commands below are for macOS/Linux; Windows PowerShell versions follow each one.
+
 #### 1. **Clone the repository**
 
 ```bash
@@ -94,6 +96,17 @@ RESULTS_FILE=/tmp/results.txt \
 node app.js
 ```
 
+**Windows (PowerShell):** the one-line `NAME=value` syntax above does not work in PowerShell. Set the variables first, then start the server (they last only for that PowerShell window):
+
+```powershell
+$env:REUSABLE_CODE = "UXResearch"
+$env:FAKE_LLM_RESPONSE = "This is a fake UXResearch response for local testing."
+$env:RESULTS_FILE = "$env:TEMP\results.txt"
+node app.js
+```
+
+To read the saved results afterwards: `Get-Content "$env:TEMP\results.txt"`. Stop the server with Ctrl+C.
+
 #### 4. **Optional: run locally with participant-specific codes (still no PostgreSQL)**
 Generate a local JSON code file:
 
@@ -111,8 +124,19 @@ RESULTS_FILE=/tmp/results.txt \
 node app.js
 ```
 
+**Windows (PowerShell):** PowerShell's `>` can save the file in an encoding the app cannot read, so use `Out-File` with an explicit encoding instead:
+
+```powershell
+python pre_requisites\generate_codes.py --expid local_demo --format local-json | Out-File -Encoding ascii "$env:TEMP\uxresearch_local_codes.json"
+$env:EXPERIMENT_ID = "local_demo"
+$env:LOCAL_CODES_FILE = "$env:TEMP\uxresearch_local_codes.json"
+$env:FAKE_LLM_RESPONSE = "This is a fake UXResearch response for local testing."
+$env:RESULTS_FILE = "$env:TEMP\results.txt"
+node app.js
+```
+
 #### 5. **Connect to the experiment website**
-- Open the browser and visit http://localhost:3030 (or the port printed by the server).
+- Open the browser and visit http://localhost:3030. 3030 is the default; if you set `PORT`, use that port instead (the server prints it on startup).
 
 #### 6. **Test flow**
 - For the minimal smoke test, enter the reusable code `UXResearch`.
@@ -234,7 +258,7 @@ SESSION_SECRET=replace_with_a_long_random_secret
 - `REDIRECT_URL`: URL to redirect participants after completion (used to redirect users back to the referrer site ,e.g. Prolific).
 - `OPENAI_TOKEN_LIMIT`: Maximum tokens for OpenAI responses (default is 1000).
 - `OPENAI_MODEL`: OpenAI model to use (default `gpt-4o`).
-- `FAKE_LLM_RESPONSE`: Fixed assistant reply used when `OPENAI_API_KEY` is not set. If no API key is provided, this variable is required.
+- `FAKE_LLM_RESPONSE`: Fixed assistant reply used when `OPENAI_API_KEY` is not set. Optional: if omitted, `config.js` supplies a default test reply.
 - `DATABASE_URL`: PostgreSQL connection string for database-backed code validation and result storage.
 - `RESULTS_PGTABLE`: PostgreSQL table name for results storage (default `uxresearch_results`).
 - `CODES_PGTABLE`: PostgreSQL table name for participant codes (default `uxresearch_codes`).
