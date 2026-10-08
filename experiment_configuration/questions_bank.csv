@@ -10,13 +10,13 @@ Pre_familiarity,0,1,q_pre_familiarity_1,I am very familiar with movies.,0,0,1,0,
 Pre_familiarity,0,1,q_pre_familiarity_2,I am very familiar with TV shows.,0,0,1,0,0,Strongly disagree|Strongly agree
 Pre_familiarity,0,1,q_pre_familiarity_3,I consider myself knowledgeable about different movie and TV genres.,0,0,1,0,0,Strongly disagree|Strongly agree
 Pre_familiarity,0,1,q_pre_control_1,I like to have control over how a recommendation is generated.,0,0,1,0,0,Strongly disagree|Strongly agree
+Pre_familiarity,0,1,q_pre_overload,I often have difficulty choosing what to watch because there are too many options.,0,0,1,0,0,Strongly disagree|Strongly agree
 Pre_involvement,0,1,q_pre_involve_0,"For each line, pick the number closest to how you feel about movies and TV shows.",0,0,0,0,1,
 Pre_involvement,0,1,q_pre_involve_1,"To me, movies and TV shows are…",0,1,0,0,0,Unimportant|Important
 Pre_involvement,0,1,q_pre_involve_2,"To me, movies and TV shows are…",0,1,0,0,0,Irrelevant|Relevant
 Pre_involvement,0,1,q_pre_involve_3,"To me, movies and TV shows…",0,1,0,0,0,Mean nothing|Mean a lot
 Pre_habits,0,0,q_pre_streaming_use,"How often do you use streaming services (such as Netflix, Hulu, Disney+ or Max)?",0,0,0,1,0,Daily|A few times a week|About once a week|A few times a month|Less than once a month|Never
 Pre_habits,0,0,q_pre_choose_time,"When you sit down to watch something, how long does it usually take you to choose?",0,0,0,1,0,Less than 5 minutes|5-10 minutes|11-20 minutes|21-30 minutes|More than 30 minutes
-Pre_habits,0,0,q_pre_overload,I often have difficulty choosing what to watch because there are too many options.,0,1,0,0,0,Strongly disagree|Strongly agree
 Pre_criteria,0,1,q_pre_criteria_0,"How important is each of these when you choose something to watch? (1 = not at all important, 4 = moderately important, 7 = extremely important)",0,0,0,0,1,
 Pre_criteria,0,1,q_pre_criteria_1,Genre,0,0,1,0,0,Not at all important|Extremely important
 Pre_criteria,0,1,q_pre_criteria_2,Plot or story description,0,0,1,0,0,Not at all important|Extremely important
@@ -25,7 +25,7 @@ Pre_criteria,0,1,q_pre_criteria_8,My current mood,0,0,1,0,0,Not at all important
 Pre_criteria,0,1,q_pre_criteria_10,Being similar to movies or shows I've liked before,0,0,1,0,0,Not at all important|Extremely important
 Post_choice,0,0,q_choice_title,Which title did you choose from the chatbot's recommendations?,1,0,0,0,0,
 Post_choice,0,0,q_choice_reason,Why did you choose this title over the other recommendations?,1,0,0,0,0,
-Post_experience,0,1,q_dv_quality_0,"How much do you agree with each statement? (1 = strongly disagree, 4 = neither agree nor disagree, 7 = strongly agree)",0,0,0,0,1,
+Post_experience,0,1,q_dv_quality_0,"Thinking about the recommendations and the title you chose, how much do you agree with each statement? (1 = strongly disagree, 4 = neither agree nor disagree, 7 = strongly agree)",0,0,0,0,1,
 Post_experience,0,1,q_dv_quality_1,The recommendations matched my preferences.,0,0,1,0,0,Strongly disagree|Strongly agree
 Post_experience,0,1,q_dv_quality_2,The recommendations were relevant to what I asked for.,0,0,1,0,0,Strongly disagree|Strongly agree
 Post_experience,0,1,q_dv_quality_5,The recommended titles were described with enough information for me to decide.,0,0,1,0,0,Strongly disagree|Strongly agree
@@ -39,7 +39,7 @@ Post_experience,0,1,q_dv_usability_2,The chatbot helped me find something to wat
 Post_experience,0,1,q_dv_usability_4,The chatbot understood what I was looking for.,0,0,1,0,0,Strongly disagree|Strongly agree
 Post_open,0,0,q_dv_open,What did you like or dislike about the chatbot or its recommendations? Add anything else you'd like us to know.,1,0,0,0,0,
 Post_human_likeness,0,0,q_human_likeness_1,How would you describe the chatbot?,0,1,0,0,0,Very mechanical|Very humanlike
-Post_trust,0,1,q_trust_0,"How much do you agree with each statement? (1 = strongly disagree, 4 = neither agree nor disagree, 7 = strongly agree)",0,0,0,0,1,
+Post_trust,0,1,q_trust_0,"Thinking about the chatbot overall, how much do you agree with each statement? (1 = strongly disagree, 4 = neither agree nor disagree, 7 = strongly agree)",0,0,0,0,1,
 Post_trust,0,1,q_trust_3,I trust the recommendations given by this chatbot.,0,0,1,0,0,Strongly disagree|Strongly agree
 Post_trust,0,1,q_trust_5,The chatbot was intelligent.,0,0,1,0,0,Strongly disagree|Strongly agree
 Post_trust,0,1,q_trust_6,The chatbot's recommendations made sense to me.,0,0,1,0,0,Strongly disagree|Strongly agree
