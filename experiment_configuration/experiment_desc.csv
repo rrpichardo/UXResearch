@@ -21,7 +21,12 @@ consent,UXResearch,Consent Information,"<p>
   closing your browser window; responses from sessions that are not completed are not saved.
 </p>
 "
-pre_questionnaire,UXResearch,Please read the following instructions,
+pre_questionnaire,UXResearch,Please read the following instructions,"<h3 style=""font-size: 1.4em;""><strong>Scenario</strong></h3>
+<p>Picture yourself choosing something to watch on Netflix, but you don't have a specific title in mind. Instead of browsing the homepage, you'll use an AI chatbot to help you find a movie or TV show. Think about your own interests and preferences, just like you normally would.</p>
+<h3 style=""font-size: 1.4em;""><strong>Your Task</strong></h3>
+<p>Pick <strong>one</strong> movie or TV show that you would actually want to watch. Focus on your own tastes and preferences, not what you think others might pick.</p>
+<p><strong>Step 1: Complete the initial questionnaire below.</strong> Answer a few questions about how familiar you are with movies and TV shows, and what you usually look for when choosing something to watch.</p>
+"
 post_questionnaire,UXResearch,Thank you for participating,
 session_ended,UXResearch,Thank You for participating in the study.<br/>,
 error,UXResearch,We are sorry - an error has occurred. Please close your browser and try again,
