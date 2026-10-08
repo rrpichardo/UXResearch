@@ -11,10 +11,10 @@ Pre_familiarity,0,1,q_pre_familiarity_2,I am very familiar with TV shows.,0,0,1,
 Pre_familiarity,0,1,q_pre_familiarity_3,I consider myself knowledgeable about different movie and TV genres.,0,0,1,0,0,Strongly disagree|Strongly agree
 Pre_familiarity,0,1,q_pre_control_1,I like to have control over how a recommendation is generated.,0,0,1,0,0,Strongly disagree|Strongly agree
 Pre_familiarity,0,1,q_pre_overload,I often have difficulty choosing what to watch because there are too many options.,0,0,1,0,0,Strongly disagree|Strongly agree
-Pre_involvement,0,1,q_pre_involve_0,"For each line, pick the number closest to how you feel about movies and TV shows.",0,0,0,0,1,
-Pre_involvement,0,1,q_pre_involve_1,"To me, movies and TV shows are…",0,1,0,0,0,Unimportant|Important
-Pre_involvement,0,1,q_pre_involve_2,"To me, movies and TV shows are…",0,1,0,0,0,Irrelevant|Relevant
-Pre_involvement,0,1,q_pre_involve_3,"To me, movies and TV shows…",0,1,0,0,0,Mean nothing|Mean a lot
+Pre_involvement,0,1,q_pre_involve_0,"For each question, pick the number closest to your view.",0,0,0,0,1,
+Pre_involvement,0,1,q_pre_involve_1,How important are movies and TV shows to you?,0,1,0,0,0,Unimportant|Important
+Pre_involvement,0,1,q_pre_involve_2,How relevant are movies and TV shows to your life?,0,1,0,0,0,Irrelevant|Relevant
+Pre_involvement,0,1,q_pre_involve_3,How much do movies and TV shows mean to you?,0,1,0,0,0,Nothing|A lot
 Pre_habits,0,0,q_pre_streaming_use,"How often do you use streaming services (such as Netflix, Hulu, Disney+ or Max)?",0,0,0,1,0,Daily|A few times a week|About once a week|A few times a month|Less than once a month|Never
 Pre_habits,0,0,q_pre_choose_time,"When you sit down to watch something, how long does it usually take you to choose?",0,0,0,1,0,Less than 5 minutes|5-10 minutes|11-20 minutes|21-30 minutes|More than 30 minutes
 Pre_criteria,0,1,q_pre_criteria_0,"How important is each of these when you choose something to watch? (1 = not at all important, 4 = moderately important, 7 = extremely important)",0,0,0,0,1,
